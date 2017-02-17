@@ -69,7 +69,7 @@ public abstract class EBase implements Serializable {
         this.eklemeTarihi = eklemeTarihi;
     }
 
-    @Column (name = "ekleme_tarihi")
+    @Column (name = "guncelleme_tarihi")
     @Temporal (TemporalType.TIMESTAMP)
     public Date getGuncellemeTarihi() {
         return guncellemeTarihi;

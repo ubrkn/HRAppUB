@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ub.hrappub.entity.personel;
+package com.ub.hrappub.entity;
 
 import com.ub.hrappub.entity.EBase;
 import java.util.Date;
@@ -22,13 +22,13 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@SequenceGenerator(allocationSize = 1, name = "default_id_generator", sequenceName = "seq_personel")
 @Table(name = "personel")
+@SequenceGenerator(allocationSize = 1, name = "default_id_generator", sequenceName = "seq_personel")
 public class Personel extends EBase {
     
     private String adSoyad;
-    private String unvan;
-    private String Birimi;
+    private EUnvan unvan;
+    private EBirim birimi;
     private long sicilNo;
     private Date girisTarihi;
 
@@ -43,22 +43,22 @@ public class Personel extends EBase {
 
     @Enumerated (EnumType.ORDINAL)
     @Column(name="unvan")
-    public String getUnvan() {
+    public EUnvan getUnvan() {
         return unvan;
     }
 
-    public void setUnvan(String unvan) {
+    public void setUnvan(EUnvan unvan) {
         this.unvan = unvan;
     }
 
     @Enumerated (EnumType.ORDINAL)
     @Column(name="birim")
-    public String getBirimi() {
-        return Birimi;
+    public EBirim getBirimi() {
+        return birimi;
     }
 
-    public void setBirimi(String Birimi) {
-        this.Birimi = Birimi;
+    public void setBirimi(EBirim birimi) {
+        this.birimi = birimi;
     }
 
     @Column(name="sicil_no")

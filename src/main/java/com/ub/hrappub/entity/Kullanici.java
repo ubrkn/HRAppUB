@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ub.hrappub.entity.kullanici;
+package com.ub.hrappub.entity;
 
 import com.ub.hrappub.entity.EBase;
 import javax.persistence.Column;
@@ -17,8 +17,8 @@ import javax.persistence.Table;
  */
 
 @Entity
-@SequenceGenerator(allocationSize = 1, name = "default_id_generator", sequenceName = "seq_personel")
 @Table(name = "kullanici")
+@SequenceGenerator(allocationSize = 1, name = "default_id_generator", sequenceName = "seq_kullanici")
 public class Kullanici extends EBase {
     
     private String username;

@@ -5,8 +5,8 @@
  */
 package com.ub.hrappub.service.ui;
 
-import com.ub.hrappub.entity.kullanici.Kullanici;
-import com.ub.hrappub.service.kullanici.KullaniciService;
+import com.ub.hrappub.entity.Kullanici;
+import com.ub.hrappub.service.KullaniciService;
 import javax.swing.JOptionPane;
 
 /**
@@ -112,7 +112,7 @@ public class frmLogin extends javax.swing.JDialog {
         Kullanici kullanici = ks.getUsernameAndPassword(txtUsername.getText(), txtPassword.getText());
         if (kullanici != null && kullanici.getId() != null) {
             this.dispose();
-            frmAnasayfa a = new frmAnasayfa(kullanici);
+            frmPersonelListesi a = new frmPersonelListesi(kullanici);
             a.show();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Kullanıcı Adı veya Şifre Hatalı");
